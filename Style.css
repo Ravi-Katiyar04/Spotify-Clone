@@ -142,4 +142,96 @@ body{
     border: 3px solid rgba(0, 0, 0, 0); /* Creates a transparent border around the thumb */
 }
 
+.playList-nav{
+    margin: 26px 28px 10px 25px;
+
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navleft{
+    font-size: 20px;
+    font-weight: 700;
+}
+.card-Container{
+    margin: 0 12px;
+    display: flex;
+    overflow: hidden;
+}
+
+.card{
+    min-width: 133px;
+    padding: 14px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #737373;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.card:hover{
+    background-color: #454444;
+}
+
+.text{
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card img{
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    border-radius: 10px;
+
+}
+
+/* Container for the play button */
+.play-button {
+    position: absolute;
+    bottom: 0;
+    right: 28px;
+    width: 40px;         /* Width of the button */
+    height: 40px;        /* Height of the button */
+    background-color: #1ed760; /* Green background */
+    
+    border-radius: 50%;  /* Makes the button circular */
+    display: flex;       /* Center the play icon */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;     /* Pointer cursor on hover */
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+     /* Optional shadow */
+    transition: transform 0.3s ease-in-out; 
+    opacity: 0;
+}
+
+/* The play icon */
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 14px solid black; /* Black color for the play icon */
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+/* Add hover effect to increase size */
+.play-button:hover {
+    background-color: #63d37e; /* Darker green on hover */
+    transform: scale(1.1); /* Scales the button to 120% of its original size */
+}
+
+.card:hover .play-button{
+    opacity: 1;
+    bottom: 76px;
+    /* transition: transform 5s ease-in-out; */
+}
 
