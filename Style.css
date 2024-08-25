@@ -10,16 +10,20 @@ body{
     margin: 6px;
 }
 .left{
-    width: 25vw;
+    width: 20vw;
     background-color: black;
     color: white;
+    position: sticky;
 }
 
 .right{
-    width: 75vw;
+    width: 80vw;
+    background-color:#1c1c1c;
+    border-radius: 10px;
+    margin-left: 8px;
+    height: 95vh;
 
 }
-
 .home ul li{
     list-style: none;
     width: 26px;
@@ -34,13 +38,12 @@ body{
 .home{
     padding: 20px;
     background-color: #121212;
-    margin: 5px;
-    border-radius: 8px;
+    margin-bottom: 8px;
+    border-radius: 10px;
 }
 .lib{
     background-color: #121212;
-    margin: 5px;
-    border-radius: 8px;
+    border-radius: 10px;
     padding:10px;
     min-height: 71vh;
     position: relative;
@@ -50,7 +53,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 .lib-left{
@@ -69,7 +72,7 @@ body{
 }
 
 .foot{
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 13px;
@@ -89,7 +92,7 @@ body{
     border: 2px solid grey;
     border-radius: 15px;
     padding: 5px 10px;
-    margin: 20px;
+    margin: 10px;
     display: flex;
     gap: 8px;
     justify-content: center;
@@ -98,8 +101,29 @@ body{
     font-weight: 700;
     font-size: 14px;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
 }
 .btn-1 img{
     width: 16px;
 }
+
+/* Right-Side Css */
+
+.nav{
+    height: 75px;
+    background-color: #101010;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+}
+
+.left-icon img{
+    width: 26px;
+}
+
+
