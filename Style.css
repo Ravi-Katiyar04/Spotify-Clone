@@ -22,6 +22,7 @@ body{
     border-radius: 10px;
     margin-left: 8px;
     height: 95vh;
+    overflow-y: scroll;
 
 }
 .home ul li{
@@ -124,6 +125,21 @@ body{
 
 .left-icon img{
     width: 26px;
+}
+
+/* Hide scrollbar background but keep the scrollbar thumb visible */
+::-webkit-scrollbar {
+    width: 12px; /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Makes the scrollbar track transparent */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounds the thumb */
+    border: 3px solid rgba(0, 0, 0, 0); /* Creates a transparent border around the thumb */
 }
 
 
