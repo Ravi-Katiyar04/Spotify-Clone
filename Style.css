@@ -13,7 +13,7 @@ body{
     width: 20vw;
     background-color: black;
     color: white;
-    position: sticky;
+    max-height: 98vh;    
 }
 
 .right{
@@ -21,8 +21,9 @@ body{
     background-color:#1c1c1c;
     border-radius: 10px;
     margin-left: 8px;
-    height: 95vh;
+    height: 98vh;
     overflow-y: scroll;
+    position: relative;
 
 }
 .home ul li{
@@ -46,7 +47,7 @@ body{
     background-color: #121212;
     border-radius: 10px;
     padding:10px;
-    min-height: 71vh;
+    height: 73vh;
     position: relative;
 }
 
@@ -72,6 +73,32 @@ body{
     width: 18px;
 }
 
+.middle{
+    height: 51vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.songCard{
+    margin: 5px;
+    padding: 0px 5px;
+    height: 50px;
+    width: 92%;
+    border: 2px solid rgb(196, 191, 191);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.songInfor {
+    font-size: 14px;
+    width: 166px;
+    height: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .foot{
     padding: 10px;
     display: flex;
@@ -121,6 +148,7 @@ body{
     padding: 0 30px;
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 .left-icon img{
@@ -163,7 +191,7 @@ body{
 }
 /* Hide scrollbar background but keep the scrollbar thumb visible */
 ::-webkit-scrollbar {
-    width: 12px; /* Adjust the width of the scrollbar */
+    width: 8px; /* Adjust the width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -171,8 +199,8 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounds the thumb */
+    background-color: #525151; /* Color of the scrollbar thumb */
+    border-radius: 8px; /* Rounds the thumb */
     border: 3px solid rgba(0, 0, 0, 0); /* Creates a transparent border around the thumb */
 }
 
@@ -266,4 +294,41 @@ body{
 .card:hover .play-button{
     opacity: 1;
     bottom: 76px;
+}
+
+.playbar{
+    width: 96.5%;
+    height: 40px;
+    background-color: rgb(4, 4, 4);
+    position: sticky;
+    bottom: 0;
+    padding: 10px 20px;
+    width: 75.6vw;
+    
+}
+
+.songbtn{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.seekbar{
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    height: 2px;
+    width: 94.5%;
+    background-color: rgb(158, 156, 156);
+    position: absolute;
+    bottom: 0;
+}
+.circle{
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: left 0.5s;
 }
