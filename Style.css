@@ -307,28 +307,49 @@ body{
     
 }
 
+.upplaybar{
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0px 100px; */
+    padding: 0px 80px;
+}
+
+.songinfo{
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    width: 200px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .songbtn{
     display: flex;
     gap: 15px;
     justify-content: center;
+    cursor: pointer;
 }
 .seekbar{
     display: flex;
     margin: 10px;
     border-radius: 10px;
-    height: 2px;
+    height: 3px;
     width: 94.5%;
     background-color: rgb(158, 156, 156);
     position: absolute;
     bottom: 0;
+    cursor: pointer;
 }
 .circle{
-    height: 14px;
-    width: 14px;
-    border-radius: 14px;
+    height: 12px;
+    width: 12px;
+    border-radius: 16px;
     background-color: white;
     position: absolute;
     bottom: -5px;
     left: 0;
-    transition: left 0.5s;
+    transition: left 0.4s;
+    cursor: pointer;
 }
