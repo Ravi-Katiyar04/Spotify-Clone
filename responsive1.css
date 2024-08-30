@@ -1,6 +1,6 @@
 
 
-@media (max-width:550px) {
+@media (max-width:600px) {
     .upplaybar{
         flex-direction: column;
         justify-content: center;
@@ -13,9 +13,14 @@
     .seekbar{
         width: 95%;
     }
+    .time-volume{
+        flex-direction: column;
+        gap: 4px;
+        width: 70%;
+    }
 }
 
-    @media (max-width:1200px) {
+    @media (max-width:1250px) {
         .left {
             border: 2px solid red;
             position: absolute;
@@ -77,6 +82,12 @@
         .login:hover{
             font-size: 16px;
             width: 100px;
+        }
+        .songbtn img{
+            width: 20px;
+        }
+        .time-volume{
+            width: 50%;
         }
     
     }

@@ -169,6 +169,16 @@ let songs;
         
     })
 
+    // add eventListener to the volume 
+
+    document.querySelector(".myseekbar").addEventListener("click", e=>{
+        let percent=(e.offsetX/e.target.getBoundingClientRect().width) * 100;
+        document.querySelector(".mycircle").style.left= percent + "%";
+
+        currentSong.volume=parseInt(percent)/100;
+        
+    })
+
 
     // // Play the first song
     // var audio = new Audio(songs[0]);
