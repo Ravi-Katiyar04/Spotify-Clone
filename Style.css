@@ -13,7 +13,7 @@ body{
     width: 20vw;
     background-color: black;
     color: white;
-    max-height: 98vh;    
+    height: 98vh;    
 }
 
 .right{
@@ -24,13 +24,14 @@ body{
     height: 98vh;
     overflow-y: scroll;
     position: relative;
+    overflow-x: hidden;                  
 
 }
 .home ul li{
     list-style: none;
     width: 26px;
     display: flex;
-    gap: 15px;
+    gap: 14px;
     padding-top: 18px;
     cursor: pointer;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,12 +43,20 @@ body{
     background-color: #121212;
     margin-bottom: 8px;
     border-radius: 10px;
+    height: 17%;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
+.close{
+    display: none;
 }
 .lib{
     background-color: #121212;
     border-radius: 10px;
-    padding:10px;
-    height: 73vh;
+    /* padding:10px; */
+    height: 76%;
     position: relative;
 }
 
@@ -74,16 +83,16 @@ body{
 }
 
 .middle{
-    height: 51vh;
+    height: 70%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .songCard{
-    margin: 5px;
+    margin: 5px 10px;
     padding: 0px 5px;
     height: 50px;
-    width: 92%;
+    width: 88%;
     border: 2px solid rgb(196, 191, 191);
     border-radius: 5px;
     display: flex;
@@ -92,8 +101,8 @@ body{
     cursor: pointer;
 }
 .songInfor {
-    font-size: 14px;
-    width: 166px;
+    font-size: 12px;
+    width: 70%;
     height: 32px;
     overflow: hidden;
     white-space: nowrap;
@@ -101,38 +110,25 @@ body{
 }
 .foot{
     padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
     font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
     position: absolute;
-    bottom: 60px;
+    bottom: 10px;
+}
+.footup{
+    display: flex;
+    gap: 15px;
+}
+.footdown{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .foot a{
     color: grey;
     
-}
-.btn-1 button{
-    background-color: #121212;
-    color: white;
-    border: 2px solid grey;
-    border-radius: 15px;
-    padding: 5px 10px;
-    margin: 10px;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    position: absolute;
-    bottom: 10px;
-}
-.btn-1 img{
-    width: 16px;
 }
 
 /* Right-Side Css */
@@ -153,6 +149,9 @@ body{
 
 .left-icon img{
     width: 26px;
+}
+.hamburger{
+    display: none;
 }
 .sign{
     background-color: #101010;
@@ -225,7 +224,7 @@ body{
 }
 
 .card{
-    min-width: 133px;
+    width: 133px;
     padding: 14px;
     border-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -297,21 +296,20 @@ body{
 }
 
 .playbar{
-    width: 96.5%;
-    height: 40px;
+    width: 100%;
     background-color: rgb(4, 4, 4);
     position: sticky;
     bottom: 0;
-    padding: 10px 20px;
-    width: 75.6vw;
+    padding: 10px 0px;
+    /* overflow-x: hidden; */
     
 }
 
 .upplaybar{
     display: flex;
     justify-content: space-between;
-    /* margin: 0px 100px; */
-    padding: 0px 80px;
+    margin-bottom: 10px;
+    padding: 0px 25px;
 }
 
 .songinfo{
@@ -319,7 +317,10 @@ body{
     gap: 10px;
     justify-content: start;
     align-items: center;
-    width: 200px;
+    width: 28%;
+}
+
+.mySongName{
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -330,17 +331,23 @@ body{
     gap: 15px;
     justify-content: center;
     cursor: pointer;
+    flex-wrap: nowrap;
+
 }
 .seekbar{
     display: flex;
     margin: 10px;
+
     border-radius: 10px;
     height: 3px;
-    width: 94.5%;
+    
+    width: 98%;
     background-color: rgb(158, 156, 156);
     position: absolute;
     bottom: 0;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 .circle{
     height: 12px;

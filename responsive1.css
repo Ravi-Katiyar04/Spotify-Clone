@@ -1,0 +1,82 @@
+
+
+@media (max-width:550px) {
+    .upplaybar{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
+    .songinfo{
+        width: 70%;
+    }
+    .seekbar{
+        width: 95%;
+    }
+}
+
+    @media (max-width:1200px) {
+        .left {
+            border: 2px solid red;
+            position: absolute;
+            left: -100%;
+            transition: all .2s;
+            z-index: 11;
+            width: 250px;
+    
+        }
+    
+        .right {
+            width: 100vw;
+            margin: 0;
+        }
+    
+        /* Hide scrollbar for all browsers */
+        ::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
+        }
+    
+        body {
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer and Edge */
+        }
+        
+        .card-Container{
+            overflow-x: scroll;
+        }
+    
+        .hamburger{
+            display: inline;
+        }
+        .close{
+            display: block;
+        }
+    
+        .left-icon img{
+            width: 20px;
+        }
+        .sign{
+            margin: 10px;
+            font-size: 14px;
+        }
+        
+        .sign:hover{
+            font-size: 16px;
+        }
+        
+        .login{
+            font-size: 14px;
+            width: 80px;
+            height: 40px;
+            border-radius: 20px;
+        }
+        
+        .login:hover{
+            font-size: 16px;
+            width: 100px;
+        }
+    
+    }

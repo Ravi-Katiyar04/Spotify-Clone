@@ -123,6 +123,18 @@ const playMusic = (track, pause = false) => {
         currentSong.currentTime = ((currentSong.duration) * percent)/100 ; 
     })
 
+    // Add EventListener for the hamburger 
+
+    document.querySelector(".hamburger").addEventListener("click", ()=>{
+        document.querySelector(".left").style.left="0"
+    })
+
+    // Add EventListener for close
+
+    document.querySelector(".close").addEventListener("click", ()=>{
+        document.querySelector(".left").style.left="-100%"
+    })
+
 
     // // Play the first song
     // var audio = new Audio(songs[0]);

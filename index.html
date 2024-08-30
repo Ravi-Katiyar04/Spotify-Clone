@@ -7,6 +7,7 @@
     <title>Web Player: Music for everyone</title>
     <link rel="icon" href="fabicon.svg" type="image/png/svg">
     <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="responsive1.css">
     <link rel="stylesheet" href="utility.css">
 </head>
 
@@ -14,8 +15,9 @@
     <div class="container flex">
         <div class="left">
             <div class="home">
-                <div class="logo">
+                <div class="logo">                  
                     <img class="invert" src="assets/logo.svg" alt="Spotify Logo">
+                    <img class="close" src="close.svg" alt="close">
                 </div>
                 <ul>
                     <li><img class="invert" src="assets/home.svg" alt="home">Home</li>
@@ -43,45 +45,48 @@
                     </div> -->
                 </div>
                 <div class="foot">
-                    <div>
-                        <a href="https://www.spotify.com/in-en/legal/">
-                            <span data-encore-id="type">Legal</span>
-                        </a>
+                    <div class="footup">
+                        <div>
+                            <a href="https://www.spotify.com/in-en/legal/">
+                                <span data-encore-id="type">Legal</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/in-en/safetyandprivacy/">
+                                <span data-encore-id="type">Safety &amp; Privacy Center</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="https://www.spotify.com/in-en/safetyandprivacy/">
-                            <span data-encore-id="type">Safety &amp; Privacy Center</span>
-                        </a>
+                    <div class="footdown ">
+                        <div>
+                            <a href="https://www.spotify.com/in-en/legal/privacy-policy/">
+                                <span data-encore-id="type">Privacy Policy</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/in-en/legal/cookies-policy/">
+                                <span data-encore-id="type">Cookies</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">
+                                <span data-encore-id="type">About Ads</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.spotify.com/in-en/accessibility/">
+                                <span data-encore-id="type">Accessibility</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="https://www.spotify.com/in-en/legal/privacy-policy/">
-                            <span data-encore-id="type">Privacy Policy</span>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.spotify.com/in-en/legal/cookies-policy/">
-                            <span data-encore-id="type">Cookies</span>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">
-                            <span data-encore-id="type">About Ads</span>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.spotify.com/in-en/accessibility/">
-                            <span data-encore-id="type">Accessibility</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="btn-1">
-                    <button><img class="invert" src="assets/earth.svg" alt="Earth logo">English</button>
                 </div>
             </div>
         </div>
         <div class="right">
             <div class="nav">
+                
                 <div class="left-icon">
+                    <img class="hamburger" src="assets/hamburger.svg" alt="hamburger">
                     <img src="assets/leftArrow.svg" alt="Left-Arrow">
                     <img src="assets/rightArrow.svg" alt="Right-Arrow">
                 </div>
@@ -240,11 +245,11 @@
 
             <div class="playbar">
                 <div class="upplaybar">
-                    
+
                     <div class="songinfo">
                         <img class="invert" src="assets/music.svg" alt="music">
                         <div class="mySongName"></div>
-                     </div>
+                    </div>
                     <div class="songbtn">
                         <img id="previous" class="invert" src="assets/play-bar/preSong.svg" alt="previous">
                         <img id="play" class="invert" src="assets/play-bar/play.svg" alt="play">
