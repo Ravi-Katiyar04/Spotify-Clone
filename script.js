@@ -1,5 +1,7 @@
 console.log("Lets wirte javascript");
 
+
+
 async function getSongs() {
     let a = await fetch("http://127.0.0.1:3000/assets/songs/")
     let response = await a.text();
@@ -58,9 +60,11 @@ const playMusic = (track, pause = false) => {
 
 }
 
+let songs;
+
 (async function () {
 
-    let songs = await getSongs()
+    songs = await getSongs()
 
     playMusic(songs[0], true)
 
@@ -133,6 +137,36 @@ const playMusic = (track, pause = false) => {
 
     document.querySelector(".close").addEventListener("click", ()=>{
         document.querySelector(".left").style.left="-100%"
+    })
+
+    // add eventListener to the previous and next
+
+    previous.addEventListener("click", ()=>{
+        console.log("prevois clicked");
+
+        let index= songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+
+        if((index-1) >= 0){
+            playMusic(songs[index-1])
+        }
+        
+    })
+
+    next.addEventListener("click", ()=>{
+        
+        // console.log("next clicked");
+        // console.log(currentSong.src.split("/").slice(-1)[0]);
+        // console.log(songs);
+        let index= songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        // console.log(index);
+        if(index < songs.length-1){
+            currentSong.pause()
+        }
+        
+        if((index+1) < songs.length){
+            playMusic(songs[index+1])
+        }
+        
     })
 
 
