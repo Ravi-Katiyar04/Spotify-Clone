@@ -178,11 +178,11 @@ const playMusic = (track, pause = false) => {
 
     // add eventListener to the volume 
 
-    document.querySelector(".myseekbar").addEventListener("click", e=>{
-        let percent=(e.offsetX/e.target.getBoundingClientRect().width) * 100;
-        document.querySelector(".mycircle").style.left= percent + "%";
+    document.querySelector(".volume").getElementsByTagName("input")[0].addEventListener("change", e=>{
+        
+    
 
-        currentSong.volume=parseInt(percent)/100;
+        currentSong.volume=parseInt(e.target.value)/100;
         
     })
 
@@ -212,6 +212,8 @@ const playMusic = (track, pause = false) => {
     }))
 
     // add mute unmute in volume btn
+
+
 
 
 })()

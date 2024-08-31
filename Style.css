@@ -363,23 +363,8 @@ body{
     gap: 12px;
     
 }
-.myseekbar{
-    height: 3px;
-    width: 60%;
-    background-color: olivedrab;
-    position: relative;
-    cursor: pointer;
-
-}
-.mycircle{
-    height: 12px;
-    width: 12px;
-    border-radius: 16px;
-    position: absolute;
-    background-color: white;
-    bottom:-4px ;
-    left: 100%;
-    transition: left 0.4s;
+.volume input{
+    height: 4px;
     cursor: pointer;
 }
 .seekbar{
