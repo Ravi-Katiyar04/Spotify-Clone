@@ -363,8 +363,11 @@ body{
     gap: 12px;
     
 }
-.volume input{
+.range input{
     height: 4px;
+    cursor: pointer;
+}
+.volume img{
     cursor: pointer;
 }
 .seekbar{
