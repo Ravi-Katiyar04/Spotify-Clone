@@ -1,22 +1,52 @@
 console.log("Lets wirte javascript");
 
+let songs;
+let currFolder;
 
-
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/assets/songs/")
+async function getSongs(folder) {
+    currFolder=folder;
+    let a = await fetch(`http://127.0.0.1:3000/assets/songs/${currFolder}/`)
     let response = await a.text();
     // console.log(response);
     let div = document.createElement("div")
     div.innerHTML = response;
     let as = div.getElementsByTagName("a")
-    let songs = []
+    songs = []
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1])
+            songs.push(element.href.split(`/${folder}/`)[1])
         }
     }
-    return songs
+
+    // Show all the songs in play List (left)
+
+    let songUL = document.querySelector(".middle")
+
+    // Get the list of all song
+    songUL.innerHTML=""
+
+    for (const song of songs) {
+        songUL.innerHTML = songUL.innerHTML + `<div class="songCard">
+                        <div><img class="invert" src="assets/music.svg" alt="Music"></div>
+                        <div class="songInfor">
+                            <p class="songName">${song.replaceAll("%20", " ")}</p>
+                            <p>Artist: Ravi Katiyar</p>
+                        </div>
+                        <div><img class="invert" src="assets/play-bar/play.svg" alt=""></div>
+                    </div>`
+    }
+
+
+    // Attach an evenet listner to each song
+
+    Array.from(document.querySelector(".middle").querySelectorAll(".songCard")).forEach(e => {
+        e.addEventListener("click", element => {
+            console.log(e.querySelector(".songName").innerHTML)
+            playMusic(e.querySelector(".songName").innerHTML)
+
+        })
+    })
 
 
 }
@@ -44,7 +74,7 @@ let currentSong = new Audio();
 const playMusic = (track, pause = false) => {
 
     // let audio= new Audio("/assets/songs/"+track)
-    currentSong.src = "/assets/songs/" + track
+    currentSong.src = `/assets/songs/${currFolder}/` + track
     if (!pause) {
         currentSong.play()
         play.src = "assets/play-bar/pause.svg"
@@ -60,39 +90,16 @@ const playMusic = (track, pause = false) => {
 
 }
 
-let songs;
+
 
 (async function () {
 
-    songs = await getSongs()
+    await getSongs("Preloaded")
+
+    
 
     playMusic(songs[0], true)
 
-    // Show all the songs in play List (left)
-    let songUL = document.querySelector(".middle")
-
-    // Get the list of all song
-
-    for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + `<div class="songCard">
-                        <div><img class="invert" src="assets/music.svg" alt="Music"></div>
-                        <div class="songInfor">
-                            <p class="songName">${song.replaceAll("%20", " ")}</p>
-                            <p>Artist: Ravi Katiyar</p>
-                        </div>
-                        <div><img class="invert" src="assets/play-bar/play.svg" alt=""></div>
-                    </div>`
-    }
-
-    // Attach an evenet listner to each song
-
-    Array.from(document.querySelector(".middle").querySelectorAll(".songCard")).forEach(e => {
-        e.addEventListener("click", element => {
-            console.log(e.querySelector(".songName").innerHTML)
-            playMusic(e.querySelector(".songName").innerHTML)
-
-        })
-    })
 
     // Attach eventListner in play, previos and next
     play.addEventListener("click", () => {
@@ -179,15 +186,32 @@ let songs;
         
     })
 
+    // add eventlistener on the social media icon
 
-    // // Play the first song
-    // var audio = new Audio(songs[0]);
-    // // audio.play();
+    insta.addEventListener("click", ()=>{
+        window.open("https://www.instagram.com/spotify/" , "blank")
+    })
 
-    // //Get duration of song
-    // audio.addEventListener("loadeddata", () => {
-    //     let duration = audio.duration;
-    //     console.log(duration);
+    twitter.addEventListener("click", ()=>{
+        window.open("https://x.com/spotify" , "blank")
+    })
 
-    // })
+    fb.addEventListener("click", ()=>{
+        window.open("https://www.facebook.com/Spotify" , "blank")
+    })
+
+    // Load PlayList Whenever card is clicked 
+
+    Array.from(document.querySelectorAll(".card").forEach(e=>{
+        
+        e.addEventListener("click", async item=>{
+            songs= await getSongs(`${item.currentTarget.dataset.folder}`)
+            
+            
+        })       
+    }))
+
+    // add mute unmute in volume btn
+
+
 })()
