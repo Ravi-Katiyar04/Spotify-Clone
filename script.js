@@ -43,25 +43,25 @@ async function getSongs(folder) {
         });
     });
 
-    document.querySelectorAll('.myplayer').forEach((player, index) => {
-        player.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent event from bubbling up to the songCard
-            if (currentSong && currentSong.src.includes(songs[index])) {
-                // Toggle play/pause for the current song
-                if (currentSong.paused) {
-                    currentSong.play();
-                    player.src = "assets/play-bar/pause.svg";
-                } else {
-                    currentSong.pause();
-                    player.src = "assets/play-bar/play.svg";
-                }
-            } else {
-                // Play the selected song and update icons
-                playMusic(songs[index]);
-                updateIcons(index);
-            }
-        });
-    });
+    // document.querySelectorAll('.myplayer').forEach((player, index) => {
+    //     player.addEventListener('click', (event) => {
+    //         event.stopPropagation(); // Prevent event from bubbling up to the songCard
+    //         if (currentSong && currentSong.src.includes(songs[index])) {
+    //             // Toggle play/pause for the current song
+    //             if (currentSong.paused) {
+    //                 currentSong.play();
+    //                 player.src = "assets/play-bar/pause.svg";
+    //             } else {
+    //                 currentSong.pause();
+    //                 player.src = "assets/play-bar/play.svg";
+    //             }
+    //         } else {
+    //             // Play the selected song and update icons
+    //             playMusic(songs[index]);
+    //             updateIcons(index);
+    //         }
+    //     });
+    // });
 
     return songs;
 }
