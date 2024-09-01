@@ -39,7 +39,7 @@ async function getSongs(folder) {
         card.addEventListener('click', () => {
             // Play music and change the myplayer icon when songCard is clicked
             playMusic(songs[index]);
-            updatePlayerIcons(index);
+            updateIcons(index);
         });
     });
 
@@ -58,7 +58,7 @@ async function getSongs(folder) {
             } else {
                 // Play the selected song and update icons
                 playMusic(songs[index]);
-                updatePlayerIcons(index);
+                updateIcons(index);
             }
         });
     });
@@ -83,7 +83,7 @@ function convertSeconds(seconds) {
 }
 
 let currentSong = new Audio();
-let currentPlayer = null; // Track the current player icon
+let currPlayer = null; // Track the current player icon
 
 const playMusic = (track, pause = false) => {
     currentSong.src = `/assets/songs/${currFolder}/` + track;
@@ -96,12 +96,12 @@ const playMusic = (track, pause = false) => {
     document.querySelector(".songtime").innerHTML = `${convertSeconds(currentSong.currentTime)} / ${convertSeconds(currentSong.duration)}`;
 };
 
-function updatePlayerIcons(index) {
+function updateIcons(index) {
     // Update the icons for all players
     document.querySelectorAll('.myplayer').forEach((player, idx) => {
         if (idx === index) {
             player.src = currentSong.paused ? "assets/play-bar/play.svg" : "assets/play-bar/pause.svg";
-            currentPlayer = player;
+            currPlayer = player;
         } else {
             player.src = "assets/play-bar/play.svg"; // Reset other icons
         }
@@ -121,8 +121,8 @@ function updatePlayerIcons(index) {
             currentSong.pause();
             play.src = "assets/play-bar/play.svg";
         }
-        if (currentPlayer) {
-            currentPlayer.src = currentSong.paused ? "assets/play-bar/play.svg" : "assets/play-bar/pause.svg";
+        if (currPlayer) {
+            currPlayer.src = currentSong.paused ? "assets/play-bar/play.svg" : "assets/play-bar/pause.svg";
         }
     });
 
@@ -152,7 +152,7 @@ function updatePlayerIcons(index) {
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
         if ((index - 1) >= 0) {
             playMusic(songs[index - 1]);
-            updatePlayerIcons(index - 1);
+            updateIcons(index - 1);
         }
     });
 
@@ -163,7 +163,7 @@ function updatePlayerIcons(index) {
         }
         if ((index + 1) < songs.length) {
             playMusic(songs[index + 1]);
-            updatePlayerIcons(index + 1);
+            updateIcons(index + 1);
         }
     });
 
