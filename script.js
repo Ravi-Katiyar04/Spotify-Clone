@@ -201,7 +201,21 @@ function updatePlayerIcons(index) {
     Array.from(document.querySelectorAll(".card")).forEach(e => {
         e.addEventListener("click", async item => {
             songs = await getSongs(`${item.currentTarget.dataset.folder}`);
-            playMusic(songs[0]);
+
+
+            console.log(item.target.src);
+            if (item.target.src.includes("plybtn.svg")) {
+                item.target.src = item.target.src.replace("plybtn.svg", "pasbtn.svg");
+                playMusic(songs[0]);
+                updatePlayerIcons(0)
+
+            }
+            else if (item.target.src.includes("pasbtn.svg")) {
+                item.target.src = item.target.src.replace("pasbtn.svg", "plybtn.svg");
+                currentSong.pause();
+                updatePlayerIcons(1);
+                play.src = "assets/play-bar/play.svg";
+            }
         });
     });
 })();

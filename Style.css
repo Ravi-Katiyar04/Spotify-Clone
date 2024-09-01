@@ -252,44 +252,33 @@ body{
 
 }
 
-/* Container for the play button */
+/*Container for the play button */
 .play-button {
     position: absolute;
-    bottom: 0;
+    top: 100%;       
     right: 28px;
-    width: 40px;         /* Width of the button */
-    height: 40px;        /* Height of the button */
-    background-color: #1ed760; /* Green background */
     opacity: 0;
-    border-radius: 50%;  /* Makes the button circular */
-    display: flex;       /* Center the play icon */
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;     /* Pointer cursor on hover */
+    cursor: pointer;    
     transition-property: bottom;
-    transition-duration: 0.1s;
+    transition-duration: 0.4s;
     transition-timing-function: cubic-bezier(0, 0.04, 0, 1.38);
     
 }
 
-/* The play icon */
-.play-icon {
-    width: 0;
-    height: 0;
-    border-left: 14px solid black; /* Black color for the play icon */
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
+.play-button img{
+    width: 46px;
+    height: 46px;
 }
 
+
 /* Add hover effect to increase size */
-.play-button:hover {
-    background-color: #63d37e; /* Darker green on hover */
-    transform: scale(1.1); /* Scales the button to 120% of its original size */
+.play-button>img:hover {
+    transform: scale(1.11); /* Scales the button to 120% of its original size */
 }
 
 .card:hover .play-button{
     opacity: 1;
-    bottom: 76px;
+    top: 94px;
 }
 
 .Artist-text h3{
