@@ -3,10 +3,10 @@ console.log("Lets write javascript");
 let songs;
 let currFolder;
 
+
 async function getSongs(folder) {
     currFolder = folder;
     let a = await fetch(`http://127.0.0.1:3000/Spotify-Clone/assets/songs/${currFolder}/`);
-
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -87,7 +87,9 @@ let currentSong = new Audio();
 let currentPlayer = null; // Track the current player icon
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `/assets/songs/${currFolder}/` + track;
+    currentSong.src = `/Spotify-Clone/assets/songs/${currFolder}/` + track;
+    console.log(`/assets/songs/${currFolder}/` + track);
+    
     if (!pause) {
         currentSong.play();
         play.src = "assets/play-bar/pause.svg";
