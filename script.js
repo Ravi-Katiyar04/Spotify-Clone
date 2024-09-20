@@ -6,6 +6,7 @@ let currFolder;
 async function getSongs(folder) {
     currFolder = folder;
     let a = await fetch(`http://127.0.0.1:3000/assets/songs/${currFolder}/`);
+    
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -109,7 +110,7 @@ function updatePlayerIcons(index) {
 }
 
 (async function () {
-    await getSongs("Preloaded");
+    await getSongs("PreLoaded");
     playMusic(songs[0], true);
 
     // Attach eventListner in play, previous, and next
