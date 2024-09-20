@@ -201,6 +201,10 @@ body{
     border: 3px solid rgba(0, 0, 0, 0); /* Creates a transparent border around the thumb */
 }
 
+.playList{
+    width: 100%;
+}
+
 .playList-nav{
     margin: 26px 28px 10px 25px;
 
@@ -215,7 +219,7 @@ body{
     font-weight: 700;
 }
 .card-Container{
-    margin: 0 12px;
+    margin: 0 10px;
     display: flex;
     overflow: hidden;
 }
